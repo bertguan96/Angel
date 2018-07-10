@@ -6,7 +6,7 @@
  * Time: 19:17
  */
 
-class configentity
+class config
 {
 
     private $DB_url;
@@ -62,6 +62,6 @@ class configentity
      * 6. 数据库表名称
      */
     public function printConnection() {
-        echo "The URL address is : ".$this->DB_url."\nThe username is : ".$this->DB_username."\nThe password is : ".$this->DB_password."\nThe maxCon is : ".$this->DB_max_con."\nThe release time is : ".$this->DB_release_time."\nThe DBname is : ".$this->DB_name;
+        echo "The URL address is : ".$this->DB_url."\nThe username is : ".$this->DB_username."\nThe password is : ".$this->DB_password."\nThe maxCon is : ".$this->DB_max_con."\nThe release time is : ".$this->DB_release_time."\nThe DBname is : ".$this->DB_name."\n";
     }
 }

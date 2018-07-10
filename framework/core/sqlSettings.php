@@ -5,7 +5,8 @@
  * Date: 2018/1/5
  * Time: 14:10
  */
-require "config.php";
+require "../database/dbConfig.php";
+
 /**
  * 根据id查找信息
  * $id为你要查找的数值
@@ -14,7 +15,7 @@ require "config.php";
  */
 function searchById($id, $tableName, $selcet)
 {
-    global $conn;
+    $conn = getConnection();
     /**
      *  如果是字符串，自动执行第一个方法，如果是第二个
      */
@@ -26,23 +27,24 @@ function searchById($id, $tableName, $selcet)
     }
     $result = @mysqli_query($conn, $query) or die("数据获取失败" . mysqli_error($conn));
     if ($result > 0) {
+        mysqli_close($conn);
         return $result;
     } else {
+        mysqli_close($conn);
         echo "查找失败";
     }
-    mysqli_close($conn);
 }
 
 /**
  * 注：只支持删除一整条数据，，通过id删除
  * 根据id查找信息
- * $id为你要删除的数值
- * $tableName为你要查找的表
- * $select 为你要删除的字段
+ * $id         为你要删除的数值
+ * $tableName  为你要查找的表
+ * $select     为你要删除的字段
  */
 function delById($id, $tableName, $select)
 {
-    global $conn;
+    $conn = getConnection();
     /**
      *  如果是字符串，自动执行第一个方法，如果是第二个
      */
@@ -64,15 +66,15 @@ function delById($id, $tableName, $select)
  */
 function searchAllFunction($tableName)
 {
-    global $conn;
+    $conn = getConnection();
     $query = "SELECT * FROM " . $tableName;
     $result = @mysqli_query($conn, $query) or die("查询失败" . mysqli_error($conn));
-    return $result;
     mysqli_close($conn);
+    return $result;
 }
 function delAllById($id, $tableName)
 {
-    global $conn;
+    $conn = getConnection();
     $query = "DELETE  FROM " . $tableName . " WHERE  id  = " . $id ;
     echo $query;
     $result = @mysqli_query($conn, $query) or die("删除失败" . mysqli_error($conn));

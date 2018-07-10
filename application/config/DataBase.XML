@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--这里就是填写数据库基本配置的地方-->
 <database>
     <DB_url>localhost</DB_url>
     <DB_username>root</DB_username>
     <DB_password>root</DB_password>
-    <DB_name>php_car</DB_name>
+    <DB_name>commodity</DB_name>
     <DB_max_con>100</DB_max_con>
     <DB_release_time>5000</DB_release_time>
     <DB_type>mysql</DB_type>
