@@ -8,7 +8,7 @@
 
 /**
  * Class basePublicTools
- *
+ * 基础公共工具
  */
 class basePublicTools{
 
