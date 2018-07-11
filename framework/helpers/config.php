@@ -6,6 +6,10 @@
  * Time: 19:17
  */
 
+/**
+ * Class config
+ * 数据库配置读取类
+ */
 class config
 {
 
@@ -33,7 +37,7 @@ class config
     }
 
     /**
-     * configentity constructor.
+     * config constructor.
      * @param $DB_url          数据库连接地址
      * @param $DB_username     数据库用户名
      * @param $DB_password     数据库密码

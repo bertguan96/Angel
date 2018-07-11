@@ -1,6 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
+ * 基础增上改查操作
  * User: gjt
  * Date: 2018/1/5
  * Time: 14:10
@@ -60,7 +61,7 @@ function delById($id, $tableName, $select)
 }
 
 /**
- * @param $tableName //输入表名
+ * @param $tableName 输入表名
  * @return bool|mysqli_result
  * 一键查询所有数据
  */
@@ -72,11 +73,16 @@ function searchAllFunction($tableName)
     mysqli_close($conn);
     return $result;
 }
+
+/**
+ * 根据主键删除指定字段的数据
+ * @param $id          唯一ID（例如表格的编号）
+ * @param $tableName   表名称
+ */
 function delAllById($id, $tableName)
 {
     $conn = getConnection();
     $query = "DELETE  FROM " . $tableName . " WHERE  id  = " . $id ;
-    echo $query;
     $result = @mysqli_query($conn, $query) or die("删除失败" . mysqli_error($conn));
     echo "删除成功";
     mysqli_close($conn);
