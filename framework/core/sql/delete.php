@@ -6,9 +6,9 @@
  * Time: 0:18
  */
 
-require "../database/dbConfig.php";
-require "../helpers/baseSQL.php";
-require "../helpers/baseSQLTools.php";
+require "../../helpers/tools/baseSQL.php";
+require "../../helpers/tools/baseSQLTools.php";
+require "../../database/DBHelper.php";
 
 class delete{
     /**
@@ -24,12 +24,17 @@ class delete{
      * @var baseSQL 基础where子句
      */
     private $baseWhere;
+    /**
+     * @var 数据库连接
+     */
+    private $conn;
 
-    function __construct()
+    function __construct($conn)
     {
         $this -> printMsg = new commonVariables();
         $this -> baseSQLTools = new baseSQLTools();
         $this -> baseWhere = new baseSQL();
+        $this->conn = $conn;
     }
 
     /**
@@ -41,8 +46,7 @@ class delete{
      */
     function deleteById($table,$param,$id){
         $query = "DELETE FROM " . $table .$this->baseWhere->baseWhere($param,$id);
-        $conn = getConnection();
-        return $this->baseSQLTools->baseDelete($query, $conn);
+        return $this->baseSQLTools->baseDelete($query, $this->conn);
     }
 
     /**
@@ -52,7 +56,6 @@ class delete{
      */
     function deleteAll($table){
         $query = "DELETE FROM " . $table;
-        $conn = getConnection();
-        return $this->baseSQLTools->baseDelete($query, $conn);
+        return $this->baseSQLTools->baseDelete($query, $this->conn);
     }
 }

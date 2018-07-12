@@ -16,6 +16,5 @@ function getMysqlConnection($config){
      */
     mysqli_select_db($conn, $config ->DB_name) or die("数据库错误" . mysqli_error($conn));
 
-    echo "连接成功";
     return $conn;
 }

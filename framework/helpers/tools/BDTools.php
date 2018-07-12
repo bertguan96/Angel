@@ -6,7 +6,7 @@
  * Time: 1:00
  */
 
-require "../database/dbConfig.php";
+require "../../database/example.php";
 
 /**
  * Class BDTools
@@ -22,27 +22,29 @@ class BDTools{
     }
 
     /**
-     * 删除跑路工具之，删表（慎用）
-     * @param $table 表名称
+     * @param $table
+     * @return bool|mysqli_result
      */
     function dropTable($table){
         $conn = getConnection();
+        $query = " DROP TABLE ".$table;
+        return $this->baseSQLTools->baseNormalQuery($query, $conn);
     }
 
     /**
-     * 新建表
+     * 新建表（暂不启用）
      * @param $list (参数集合)
      */
     function createTable($list){
-        $conn = getConnection();
+        // TODO
     }
 
     /**
-     * 修改表
+     * 修改表 (暂不启用)
      * @param $table   表名称
      * @param $optType 操作类型（1.修改字段名称，2.新增字段，3.删除字段）
      */
     function aleteTable($table,$optType){
-        $conn = getConnection();
+        // TODO
     }
 }

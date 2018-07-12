@@ -7,9 +7,9 @@
  */
 
 
-require "../database/dbConfig.php";
-require "../helpers/baseSQL.php";
-require "../helpers/baseSQLTools.php";
+require "../../helpers/tools/baseSQL.php";
+require "../../helpers/tools/baseSQLTools.php";
+require "../../database/DBHelper.php";
 
 /**
  * Class select
@@ -24,14 +24,26 @@ class select{
      * @var 加载基础查询工具
      */
     private $baseSQLTools;
-
+    /**
+     * @var baseSQL 数据库where工具
+     */
     private $baseWhere;
 
-    function __construct()
+    /**
+     * @var 数据库连接
+     */
+    private $conn;
+
+    /**
+     * select constructor.
+     * @param $conn 连接
+     */
+    function __construct($conn)
     {
         $this -> printMsg = new commonVariables();
         $this -> baseSQLTools = new baseSQLTools();
         $this -> baseWhere = new baseSQL();
+        $this->conn = $conn;
     }
 
     /**
@@ -41,8 +53,7 @@ class select{
      */
     function selectAll($table){
         $query = "SELECT * FROM ".$table;
-        $conn = getConnection();
-        return $this->baseSQLTools->baseQuery($query, $conn);
+        return $this->baseSQLTools->baseQuery($query, $this->conn);
 
     }
 
@@ -54,8 +65,7 @@ class select{
      */
     function selectById($table, $id){
         $query = "SELECT * FROM ".$table." where id =".$id;
-        $conn = getConnection();
-        return $this->baseSQLTools->baseQuery($query, $conn);
+        return $this->baseSQLTools->baseQuery($query, $this->conn);
     }
 
     /**
@@ -66,9 +76,7 @@ class select{
      * @return bool|mysqli_result
      */
     function selectByPrimaryWords($table, $param, $id){
-
         $query = "SELECT * FROM " . $table . $this -> baseWhere->baseWhere($param, $id);
-        $conn = getConnection();
-        return $this->baseSQLTools->baseQuery($query, $conn);
+        return $this->baseSQLTools->baseQuery($query, $this->conn);
     }
 }

@@ -60,4 +60,16 @@ class baseSQLTools {
         //TODO
         return null;
     }
+
+    /**
+     * 数据库通用查询工具
+     * @param $conn 数据库连接
+     * @param $query 查询语句
+     * @return string 返回提示
+     */
+    function baseNormalQuery($conn,$query){
+        $result = @mysqli_query($conn, $query) or die($this->printMsg->failMsg("操作执行") . mysqli_error($conn));
+        mysqli_close($conn);
+        return $this -> printMsg->successMsg("操作");
+    }
 }
