@@ -6,7 +6,7 @@
  * Time: 10:35
  */
 require "mySqlConfig.php";
-require "../helpers/tools/XMLUtils.php";
+require "../helpers/tools/DBXMLDUtils.php";
 require "../helpers/configs/config.php";
 
 class DBHelper{
@@ -33,7 +33,7 @@ class DBHelper{
         } else {
             $this -> filePath = $this -> filePath;
         }
-        $dbConfig = new XMLUtils( $this -> filePath);
+        $dbConfig = new DBXMLDUtils( $this -> filePath);
         $config = $dbConfig -> XMLAnalysis();
         $dbType = strtolower($config ->DB_type);
         global $conn;

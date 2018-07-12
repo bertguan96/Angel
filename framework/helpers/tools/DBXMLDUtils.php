@@ -7,10 +7,10 @@
  */
 
 /**
- * Class XMLUtils
+ * Class DBXMLDUtils
  * XML解析工具
  */
-class XMLUtils {
+class DBXMLDUtils {
 
     /**
      * @var 文件路径
@@ -18,7 +18,7 @@ class XMLUtils {
     private $filePath;
 
     /**
-     * XMLUtils constructor.
+     * DBXMLDUtils constructor.
      * @param $filePath 文件路径
      */
     function __construct($filePath)

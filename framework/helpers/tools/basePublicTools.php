@@ -12,4 +12,8 @@
  */
 class basePublicTools{
 
+
+    function  XMLUtils($str){
+
+    }
 }
