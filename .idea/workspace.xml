@@ -17,8 +17,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="285">
-                <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+              <first_editor>
+                <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -229,12 +229,12 @@
       <workItem from="1531359642104" duration="11088000" />
       <workItem from="1531388594299" duration="9929000" />
       <workItem from="1531408903445" duration="6717000" />
-      <workItem from="1531446036543" duration="11594000" />
+      <workItem from="1531446036543" duration="11728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79189000" />
+    <option name="totallyTimeSpent" value="79323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -255,8 +255,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952926" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2296719" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31383738" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20241287" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31383738" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20241287" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3281027" />
@@ -539,8 +539,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <first_editor>
+            <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>
