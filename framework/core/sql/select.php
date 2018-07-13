@@ -72,8 +72,8 @@ class select{
      * 查询指定参数的数据
      * @param $table 表名
      * @param $param 需要查询的参数
-     * @param $id
-     * @return bool|mysqli_result
+     * @param $id  参数
+     * @return bool|mysqli_result 结果集
      */
     function selectByPrimaryWords($table, $param, $id){
         $query = "SELECT * FROM " . $table . $this -> baseWhere->baseWhere($param, $id);
