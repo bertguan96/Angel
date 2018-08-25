@@ -9,7 +9,7 @@
 require "../../database/DBHelper.php";
 
 /**
- * Class sqlBase
+ * Class sqlBase（ old）
  * 基础SQL查询工具(不建议使用)
  * v1.0
  */

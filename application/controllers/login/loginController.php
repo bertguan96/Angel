@@ -12,7 +12,5 @@
  */
 class loginController{
 
-    public function vaildPassword(){
 
-    }
 }

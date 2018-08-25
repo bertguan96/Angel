@@ -9,6 +9,7 @@
 /**
  * Class baseSQLTools
  * 数据库基础工具
+ * @version 1.0
  */
 class baseSQLTools {
 
@@ -31,6 +32,8 @@ class baseSQLTools {
      * @param $conn   数据库连接
      * @param $query     查询语句
      * @return bool|mysqli_result  返回结果集
+     * @author gjt
+     * @version 1.0
      */
     function baseQuery($conn,$query){
         $result = @mysqli_query($conn, $query) or die($this->printMsg->failMsg("查询") . mysqli_error($conn));
@@ -43,6 +46,8 @@ class baseSQLTools {
      * @param $conn 数据库连接
      * @param $query 查询语句
      * @return string 返回提示
+     * @author gjt
+     * @version 1.0
      */
     function baseDelete($conn,$query){
         $result = @mysqli_query($conn, $query) or die($this->printMsg->failMsg("删除") . mysqli_error($conn));
@@ -55,6 +60,8 @@ class baseSQLTools {
      * @param $conn  数据库连接
      * @param $query 查询语句
      * @return null  返回提示
+     * @author gjt
+     * @version 1.0
      */
     function baseUpdate($conn,$query){
         //TODO
@@ -66,10 +73,30 @@ class baseSQLTools {
      * @param $conn 数据库连接
      * @param $query 查询语句
      * @return string 返回提示
+     * @author gjt
+     * @version 1.0
      */
     function baseNormalQuery($conn,$query){
         $result = @mysqli_query($conn, $query) or die($this->printMsg->failMsg("操作执行") . mysqli_error($conn));
         mysqli_close($conn);
-        return $this -> printMsg->successMsg("操作");
+        $this -> printMsg->successMsg("操作");
+        return $result;
+    }
+
+    /**
+     * 通用sql执行方法
+     * 任意sql都可以通过$sql传入并执行
+     * 一般我们自己构造sql语句的时候可以采用此方法进行数据库查询操作
+     * @param $conn 传入数据库连接
+     * @param $sql 传入sql语句
+     * @return string 返回执行结果
+     * @author gjt
+     * @version 1.0
+     */
+    function baseExcuteQuery($conn,$sql){
+        $result = @mysqli_query($conn, $sql) or die($this->printMsg->failMsg("操作执行") . mysqli_error($conn));
+        mysqli_close($conn);
+        $this -> printMsg->successMsg("操作");
+        return $result;
     }
 }

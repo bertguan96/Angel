@@ -10,7 +10,7 @@
  * Class login
  * 登陆数据库层
  */
-require "../../config/DBConn.php";
+require "../../../config/DBConn.php";
 require "../../../framework/core/sql/select.php";
 
 class login{
